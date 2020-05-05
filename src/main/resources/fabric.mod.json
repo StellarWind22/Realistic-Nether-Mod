@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "realisticnether",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "name": "Realistic Nether",
   "description": "The nether is HOT, hot enough to instantly evaporate water you should burst into flames when you enter!",
@@ -9,8 +9,8 @@
     "CrimsonDawn45"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/realistic-nether-mod",
+    "sources": "https://github.com/CrimsonDawn45/-Realistic-Nether-Mod"
   },
 
   "license": "GLP-3.0",
