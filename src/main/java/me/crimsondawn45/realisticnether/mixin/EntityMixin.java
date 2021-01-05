@@ -6,7 +6,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.world.dimension.DimensionType;
 
 @Mixin(LivingEntity.class)
 public class EntityMixin
@@ -16,7 +15,7 @@ public class EntityMixin
 	{
 		LivingEntity entity = (LivingEntity)(Object)this;
 		
-		if(entity.world.getDimension().getType() == DimensionType.THE_NETHER && !entity.isFireImmune())
+		if(entity.getEntityWorld().getDimension().isUltrawarm() && !entity.isFireImmune())
 		{
 			entity.setFireTicks(20);
 		}
