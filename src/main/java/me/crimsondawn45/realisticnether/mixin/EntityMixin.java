@@ -5,6 +5,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import me.crimsondawn45.realisticnether.RealisticNether;
 import net.minecraft.entity.LivingEntity;
 
 @Mixin(LivingEntity.class)
@@ -15,9 +16,9 @@ public class EntityMixin
 	{
 		LivingEntity entity = (LivingEntity)(Object)this;
 		
-		if(entity.getEntityWorld().getDimension().isUltrawarm() && !entity.isFireImmune())
+		if(entity.getEntityWorld().getDimension().isUltrawarm() && !entity.isFireImmune() && !RealisticNether.nether_natives.contains(entity.getType()) && !entity.isOnFire())
 		{
-			entity.setFireTicks(20);
+			entity.setOnFireFor((int) ((Math.random() * (RealisticNether.MAX_BURN_TIME - RealisticNether.MIN_BURN_TIME)) + RealisticNether.MIN_BURN_TIME));
 		}
 	}
 }
