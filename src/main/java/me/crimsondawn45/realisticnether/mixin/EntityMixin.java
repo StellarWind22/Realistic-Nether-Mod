@@ -6,19 +6,21 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import me.crimsondawn45.realisticnether.RealisticNether;
+import net.fabricmc.fabric.api.tag.convention.v1.TagUtil;
 import net.minecraft.entity.LivingEntity;
 
 @Mixin(LivingEntity.class)
-public class EntityMixin
-{
-	@Inject(at = @At(value = "TAIL"), method = "tick()V")
-	private void tick(CallbackInfo cb)
-	{
-		LivingEntity entity = (LivingEntity)(Object)this;
+public class EntityMixin {
+
+	@Inject(at = @At("TAIL"), method = "tick()V")
+	private void init(CallbackInfo info) {
 		
-		if(entity.getEntityWorld().getDimension().isUltrawarm() && !entity.isFireImmune() && !RealisticNether.nether_natives.contains(entity.getType()) && !entity.isOnFire())
-		{
-			entity.setOnFireFor((int) ((Math.random() * (RealisticNether.MAX_BURN_TIME - RealisticNether.MIN_BURN_TIME)) + RealisticNether.MIN_BURN_TIME));
+		LivingEntity entity = (LivingEntity)(Object)this;
+
+		if(!entity.equals(null)) {
+			if(entity.getWorld().getDimension().ultrawarm() && !entity.isFireImmune() && !entity.isOnFire() & !TagUtil.isIn(RealisticNether.NETHER_NATIVES, entity.getType())) {
+				entity.setOnFireFor((int) ((Math.random() * (RealisticNether.MAX_BURN_TIME - RealisticNether.MIN_BURN_TIME)) + RealisticNether.MIN_BURN_TIME));
+			}
 		}
 	}
 }

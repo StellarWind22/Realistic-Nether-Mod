@@ -11,6 +11,7 @@
         "minecraft:wither",
         "minecraft:blaze",
         "minecraft:strider",
-        "minecraft:magma_cube"
+        "minecraft:magma_cube",
+        "minecraft:enderman"
     ]
 }

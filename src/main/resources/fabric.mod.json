@@ -1,37 +1,31 @@
 {
-  "schemaVersion": 1,
-  "id": "realisticnether",
-  "version": "${version}",
-
-  "name": "Realistic Nether",
-  "description": "The nether is HOT, hot enough to instantly evaporate water you should burst into flames when you enter!",
-  "authors": [
-    "CrimsonDawn45"
-  ],
-  "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/realistic-nether-mod",
-    "sources": "https://github.com/CrimsonDawn45/-Realistic-Nether-Mod"
-  },
-
-  "license": "GPL-3.0",
-  "icon": "assets/realisticnether/icon.png",
-
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "me.crimsondawn45.realisticnether.RealisticNether"
-    ]
-  },
-  "mixins": [
-    "realisticnether.mixins.json"
-  ],
-
-  "depends": {
-    "fabricloader": ">=0.7.4",
-    "fabric": "*",
-    "minecraft": "1.16.x"
-  },
-  "suggests": {
-    "flamingo": "*"
-  }
+	"schemaVersion": 1,
+	"id": "realisticnether",
+	"version": "${version}",
+	"name": "\"Realistic\" Nether Mod",
+	"description": "The nether is HOT, hot enough to instantly evaporate water you should burst into flames when you enter!",
+	"authors": [
+		"CrimsonDawn45"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/realistic-nether-mod",
+		"sources": "https://github.com/CrimsonDawn45/-Realistic-Nether-Mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/realisticnether/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.crimsondawn45.realisticnether.RealisticNether"
+		]
+	},
+	"mixins": [
+		"realisticnether.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.0",
+		"minecraft": "~1.20.3",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
 }
